@@ -74,8 +74,8 @@
             <a class="navbar-brand text-white d-flex align-items-center" href="{{ route('berita.index') }}">
                 <span class="fs-4 me-2">🏛️</span>
                 <span>
-                    PEMERINTAH DESA CONTOH
-                    <small>KECAMATAN CONTOH KABUPATEN CONTOH</small>
+                    PEMERINTAH DAERAH SOEHAT
+                    <small>KECAMATAN LOWOKWARU KABUPATEN MALANG</small>
                 </span>
             </a>
             <div class="ms-auto">
@@ -94,8 +94,8 @@
 
     <footer class="footer-desa py-4 mt-5">
         <div class="container">
-            <strong class="text-white">Pemerintah Desa Contoh</strong><br>
-            Jalan Raya Contoh No. 1, Kecamatan Contoh, Kabupaten Contoh<br>
+            <strong class="text-white">Pemerintah Daerah Soehat</strong><br>
+            Jalan Raya Soekarno Hatta No. 1, Kecamatan Lowokwaru, Kabupaten Malang<br>
             <a href="{{ route('berita.index') }}">Berita</a>
         </div>
     </footer>

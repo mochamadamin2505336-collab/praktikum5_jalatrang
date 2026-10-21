@@ -17,12 +17,13 @@
                            value="{{ request('kata_kunci') }}" placeholder="Cari berita...">
 
                     <label class="form-label fw-semibold">Kategori</label>
-                    <select name="kategori" class="form-select mb-3">
-                        <option value="">Semua Kategori</option>
-                        @foreach (['Olahraga', 'Pendidikan', 'Potensi', 'Pembangunan'] as $k)
-                            <option value="{{ $k }}" @selected(request('kategori') == $k)>{{ $k }}</option>
-                        @endforeach
-                    </select>
+                  <select name="kategori" class="form-select mb-3">
+     <option value="">Semua Kategori</option>
+    @foreach ($kategoris as $k)
+        <option value="{{ $k->id }}" @selected(request('kategori') == $k->id)>{{ $k->nama }}</option>
+    @endforeach
+</select>
+
 
                     <button type="submit" class="btn btn-primary w-100 mb-2">Cari</button>
                     <a href="{{ route('berita.index') }}" class="btn btn-outline-secondary w-100">Reset</a>
@@ -43,7 +44,7 @@
 
                         <div class="card-body d-flex flex-column">
                             <div class="d-flex align-items-center gap-2 mb-2">
-                                <span class="badge badge-kategori text-white">{{ $berita->kategori }}</span>
+                            <span class="badge badge-kategori text-white">{{ $berita->kategori->nama }}</span>
                                 <small class="text-muted">
                                     <i class="bi bi-calendar3"></i> {{ $berita->created_at->format('d M Y') }}
                                 </small>
@@ -57,10 +58,13 @@
 
                             <p class="text-muted small flex-grow-1">{{ Str::limit($berita->isi, 80) }}</p>
 
-                            <div class="mb-2">
-                                <span class="tag-pill">#{{ Str::slug($berita->kategori) }}</span>
-                                <span class="tag-pill">#desa</span>
-                            </div>
+                        <div class="mb-2">
+                            @foreach ($berita->tags as $tag)
+                            <a href="{{ route('berita.index', ['tag' => $tag->id]) }}"
+                            class="tag-pill text-decoration-none">#{{ $tag->nama }}</a>
+                            @endforeach
+                        </div>
+
 
                             <div class="d-flex justify-content-between align-items-center mt-1">
                                 <small class="text-muted"><i class="bi bi-eye"></i> {{ $berita->dilihat }}</small>
