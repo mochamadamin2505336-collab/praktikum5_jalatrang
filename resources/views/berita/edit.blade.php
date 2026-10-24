@@ -35,17 +35,18 @@
                     </div>
 
                     <div class="mb-3">
-    <label for="gambar" class="form-label fw-semibold">Gambar</label>
-    @if ($berita->gambar)
-        <div>
-            <img src="{{ asset('storage/' . $berita->gambar) }}"
-                 class="img-thumbnail mb-2" style="max-height:140px;">
-        </div>
-    @endif
-    <input type="file" name="gambar" id="gambar" class="form-control" accept="image/*">
-    <small class="text-muted">Kosongkan jika tidak ingin mengganti gambar.</small>
-    @error('gambar') <div class="text-danger small">{{ $message }}</div> @enderror
-</div>
+                        <label for="gambar" class="form-label fw-semibold">Gambar</label>
+                        @if ($berita->gambar)
+                            <div>
+                                <img src="{{ asset('storage/' . $berita->gambar) }}"
+                                     class="img-thumbnail mb-2" style="max-height:140px;"
+                                     alt="Gambar berita {{ $berita->judul }}">
+                            </div>
+                        @endif
+                        <input type="file" name="gambar" id="gambar" class="form-control" accept="image/*">
+                        <small class="text-muted">Kosongkan jika tidak ingin mengganti gambar.</small>
+                        @error('gambar') <div class="text-danger small">{{ $message }}</div> @enderror
+                    </div>
 
                     <div class="mb-3">
                         <label for="isi" class="form-label fw-semibold">Isi Berita</label>

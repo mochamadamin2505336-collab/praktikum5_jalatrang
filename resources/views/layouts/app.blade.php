@@ -74,8 +74,8 @@
             <a class="navbar-brand text-white d-flex align-items-center" href="{{ route('berita.index') }}">
                 <span class="fs-4 me-2">🏛️</span>
                 <span>
-                    PEMERINTAH DAERAH SOEHAT
-                    <small>KECAMATAN LOWOKWARU KABUPATEN MALANG</small>
+                    PEMERINTAH DESA JALATRANG
+                    <small>KECAMATAN CIPAKU KABUPATEN CIAMIS</small>
                 </span>
             </a>
             <div class="ms-auto">
@@ -94,8 +94,8 @@
 
     <footer class="footer-desa py-4 mt-5">
         <div class="container">
-            <strong class="text-white">Pemerintah Daerah Soehat</strong><br>
-            Jalan Raya Soekarno Hatta No. 1, Kecamatan Lowokwaru, Kabupaten Malang<br>
+            <strong class="text-white">Pemerintah Daerah Jalatrang</strong><br>
+            <small class="text-muted">Alamat: Desa Jalatrang, Kecamatan Cipaku, Kabupaten Ciamis</small><br>
             <a href="{{ route('berita.index') }}">Berita</a>
         </div>
     </footer>
